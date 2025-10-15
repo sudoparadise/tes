@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"> <head> <meta charset="utf-8"/> <meta name="viewport" content="width=device-width,initial-scale=1"/> <title>PDF417 AAMVA v10 Generator</title> <link rel="stylesheet" href="styles.css"/> </head> <body> <div class="wrap"> <h1>PDF417 AAMVA v10 Generator (Per‑Jurisdiction)</h1> <div class="toolbar card"> <div class="row"> <div class="col"> <label>Jurisdiction</label> <select id="jurisdiction"></select> </div> <div class="col"> <label>Real ID</label> <select id="realid"> <option value="auto" selected>Auto (profile)</option> <option value="yes">Force Yes</option> <option value="no">Force No</option> </select> </div> <div class="col"> <label>AAMVA Version</label> <input id="aamva" type="number" min="1" max="99" /> </div> <div class="col"> <label>Entries</label> <input id="entries" type="number" min="1" max="99" value="1"/> </div> </div> </div> <div class="grid"> <div class="card"> <h3>Required Fields</h3> <div id="required-fields"></div> <h3>Optional Fields</h3> <div id="optional-fields"></div>
+text
+  <div class="actions">
+    <button id="build">Build Payload</button>
+    <button id="render">Render PDF417</button>
+    <button id="download">Download PNG</button>
+    <button id="selfcheck">Self‑check</button>
+    <span id="status" class="muted"></span>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Raw Payload</h3>
+  <textarea id="payload" spellcheck="false" placeholder="Payload will appear here"></textarea>
+  <div class="muted">Header + designators + DL/ID subfile(s). Control chars included.</div>
+
+  <h3>Barcode Preview</h3>
+  <vas id="barcode" width="900"00" height="380"></canvas>
+
+  <h3>Diagnostics</h3>
+  <pre id="diag" class="diag"></pre>
+</div>
+</div> </div><script src="vendor/pdf417.js"></script><script src="profiles.js"></script><script src="builder.js"></script><script src="fixtures.js"></script><script src="engine.js"></script></body> </html>
